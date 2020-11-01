@@ -7,6 +7,10 @@ screen_width, screen_height = 800, 600
 pygame.display.set_caption("Click Square")
 screen = pygame.display.set_mode((screen_width, screen_height))
 
+yellow = (255, 255, 0)
+red = (255, 0, 0)
+
+
 clock = pygame.time.Clock()
 finished = False
 
@@ -15,6 +19,9 @@ while not finished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
+
+    pygame.draw.rect(screen, yellow, (10, 10, 200, 100), 3)
+    pygame.draw.rect(screen, red, (400, 300, 50, 50))
 
     # Updates the drawing on the screen
     pygame.display.update()
