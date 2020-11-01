@@ -31,11 +31,7 @@ yellow = (255, 255, 0)
 red = (255, 0, 0)
 clock = pygame.time.Clock()
 
-lists = []
-for i in range(0, initial_squares):
-    s = Squares(screen)
-    s.draw(screen)
-    lists.append(s)
+
 
 finished = False
 while not finished:
@@ -43,6 +39,12 @@ while not finished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
+
+    lists = []
+    for i in range(0, initial_squares):
+        s = Squares(screen)
+        s.draw(screen)
+        lists.append(s)
 
     # Updates the drawing on the screen
     pygame.display.update()
